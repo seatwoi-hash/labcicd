@@ -34,6 +34,8 @@ def list_users():
     users = get_users(app.config['DATABASE'])
     return jsonify([dict(user) for user in users])
 
+def main():
+    app.run(host='0.0.0.0', port=8080)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    main()
